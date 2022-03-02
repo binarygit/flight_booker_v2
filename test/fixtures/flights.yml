@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  airport: one
+  start_date: 2022-03-02
+  duration: MyString
+
+two:
+  airport: two
+  start_date: 2022-03-02
+  duration: MyString
