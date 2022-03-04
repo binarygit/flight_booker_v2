@@ -5,3 +5,9 @@ to_pkr:
   arrival_airport: pkr
   start_date: 2022-03-02
   duration: 45 minutes
+
+to_ktm:
+  departure_airport: pkr
+  arrival_airport: ktm
+  start_date: 2022-03-03
+  duration: 1 hour
