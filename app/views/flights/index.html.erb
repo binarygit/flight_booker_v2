@@ -1,1 +1,14 @@
 <h1>Hello World!</h1>
+
+<form action="/" method='get'>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <ul>
+    <li>
+      <label for="username">username:</label>
+      <input id="username" name="username">
+    </li>
+    <li>
+      <button>Submit</button>
+    </li>
+  </ul>
+</form>
