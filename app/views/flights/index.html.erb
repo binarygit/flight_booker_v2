@@ -1,11 +1,21 @@
 <h1>Hello World!</h1>
 
+<%= flash[:notice] %>
+
 <form action="/" method='get'>
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <ul>
     <li>
       <label for="username">username:</label>
       <input id="username" name="username">
+    </li>
+    <li>
+      <label for="departure_airport">Departure Airport</label>
+      <select id="departure_airport" name="departure_airport">
+        <% @airports.each do |airport| %>
+          <option value="<%= a_code = airport.airport_code %>"><%= a_code %></option>
+        <% end %>
+      </select>
     </li>
     <li>
       <button>Submit</button>
