@@ -1,6 +1,7 @@
 class FlightsController < ApplicationController
   def index
     @airports = Airport.all
+    @flights = Flight.search(params)
   end
 
   private
