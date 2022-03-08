@@ -2,7 +2,7 @@
 
 <%= flash[:notice] %>
 
-<form action="/" method='get'>
+<form action="/flights" method='get' accept-charset="UTF-8">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <ul>
     <li>
@@ -12,6 +12,15 @@
     <li>
       <label for="departure_airport">Departure Airport</label>
       <select id="departure_airport" name="departure_airport">
+        <% @airports.each do |airport| %>
+          <option value="<%= a_code = airport.airport_code %>"><%= a_code %></option>
+        <% end %>
+      </select>
+    </li>
+    <li>
+      <label for="arrival_airport">Arrival Airport</label>
+      <select id="arrival_airport" name="arrival_airport">
+        <option value="to?">To?</option>
         <% @airports.each do |airport| %>
           <option value="<%= a_code = airport.airport_code %>"><%= a_code %></option>
         <% end %>
