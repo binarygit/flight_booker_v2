@@ -18,6 +18,6 @@ ktm_airport = Airport.first
 pkr_airport = Airport.last
 
 ktm_pkr = Flight.create!(departure_id: ktm_airport.id, arrival_id: pkr_airport.id,
-               start_date: Date.today, duration: '45 minutes')
+                         start_date: 'Thu, 02 Mar 2022'.to_date, duration: '45 minutes')
 pkr_ktm = Flight.create!(departure_id: pkr_airport.id, arrival_id: ktm_airport.id,
-               start_date: Date.tomorrow, duration: '1 hour')
+                         start_date: 'Thu, 03 Mar 2022'.to_date, duration: '1 hour')
