@@ -8,6 +8,6 @@ class FlightsController < ApplicationController
   private
 
   def airport_params
-    params.permit(:username, :departure_airport, :arrival_airport)
+    params.permit(:departure_airport, :arrival_airport, :departure_date)
   end
 end
