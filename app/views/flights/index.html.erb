@@ -1,34 +1,8 @@
-<h1>Hello World!</h1>
-
-<%= flash[:notice] %>
-
-<form action="/flights" method='get' accept-charset="UTF-8">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <ul>
-    <li>
-      <label for="username">username:</label>
-      <input id="username" name="username">
-    </li>
-    <li>
-      <label for="departure_airport">Departure Airport</label>
-      <select id="departure_airport" name="departure_airport">
-        <option value="from?">From?</option>
-        <% @airports.each do |airport| %>
-          <option value="<%= a_code = airport.airport_code %>"><%= a_code %></option>
-        <% end %>
-      </select>
-    </li>
-    <li>
-      <label for="arrival_airport">Arrival Airport</label>
-      <select id="arrival_airport" name="arrival_airport">
-        <option value="to?">To?</option>
-        <% @airports.each do |airport| %>
-          <option value="<%= a_code = airport.airport_code %>"><%= a_code %></option>
-        <% end %>
-      </select>
-    </li>
-    <li>
-      <button>Submit</button>
-    </li>
-  </ul>
-</form>
+<%= form_with url: 'flights', method: 'GET' do |f| %>
+  <%= f.label :departure_airport, 'Departure Airport:' %>
+  <%= f.select :departure_airport, @airports %>
+  <%= f.label :arrival_airport, 'Arrival Airport:' %>
+  <%= f.select :arrival_airport, @airports %>
+  <%= f.select :departure_date, @dates %>
+  <%= f.submit %>
+<% end %>
