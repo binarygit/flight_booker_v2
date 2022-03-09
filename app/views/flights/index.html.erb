@@ -1,8 +1,11 @@
-<%= form_with url: 'flights', method: 'GET' do |f| %>
-  <%= f.label :departure_airport, 'Departure Airport:' %>
-  <%= f.select :departure_airport, @airports %>
-  <%= f.label :arrival_airport, 'Arrival Airport:' %>
-  <%= f.select :arrival_airport, @airports %>
-  <%= f.select :departure_date, @dates %>
-  <%= f.submit %>
-<% end %>
+<div class='container'>
+  <%= form_with url: '/flights', method: 'get' do |f| %>
+    <%= f.label :departure_id, 'Departure Airport:' %>
+    <%= f.select :departure_id, @airports %>
+    <%= f.label :arrival_id, 'Arrival Airport:' %>
+    <%= f.select :arrival_id, @airports %>
+    <%= f.label :start_date, 'Departure Date: ' %>
+    <%= f.select :start_date, @dates %>
+    <%= f.submit %>
+  <% end %>
+</div>
