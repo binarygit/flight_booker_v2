@@ -1,11 +1,20 @@
+<% 
+  passenger_num = Array.new(4) {|i| [i + 1, i + 1]}
+%>
 <div class='container'>
   <%= form_with url: '/flights', method: 'get' do |f| %>
     <%= f.label :departure_id, 'Departure Airport:' %>
     <%= f.select :departure_id, @airports %>
     <%= f.label :arrival_id, 'Arrival Airport:' %>
     <%= f.select :arrival_id, @airports %>
+    <%= f.label :passenger_num, 'Passengers: ' %>
+    <%= f.select :passenger_num, passenger_num %>
     <%= f.label :start_date, 'Departure Date: ' %>
     <%= f.select :start_date, @dates %>
     <%= f.submit %>
   <% end %>
+  <% if @flights %>
+    <%= render partial: 'show_flights', locals: {flights: @flights, passenger_num: @passenger_num} %>
+  <% end %>
 </div>
+
