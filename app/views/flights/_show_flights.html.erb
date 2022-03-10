@@ -2,6 +2,7 @@
   <p>Sorry, no flights available!</p>
 <% else %>
   <%= form_with url: '/bookings', method: 'get' do |f| %>
+    <%= f.hidden_field passenger_num, name: :passenger_num, value: passenger_num %>
     <%= f.collection_radio_buttons :flight_id, flights, :id, :start_date %>
     <%= f.submit %>
   <% end %>
