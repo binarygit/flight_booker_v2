@@ -1,0 +1,9 @@
+<% if flights.empty? %>
+  <p>Sorry, no flights available!</p>
+<% else %>
+  <%= form_with url: '/bookings', method: 'get' do |f| %>
+    <%= f.collection_radio_buttons :flight_id, flights, :id, :start_date %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
+
