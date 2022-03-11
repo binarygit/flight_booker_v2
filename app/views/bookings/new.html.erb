@@ -1,1 +1,15 @@
 <h1>Hello World!</h1>
+
+<%= form_with model: @flight do |f|%>
+  <ul>
+    <% @flight.passengers.each do |passenge| %>
+      <%= f.fields_for :passenger, passenge do |p| %>
+        <li>
+          <%= p.label :name %>
+          <%= p.text_field :name %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  <%= f.submit %>
+<% end %>
